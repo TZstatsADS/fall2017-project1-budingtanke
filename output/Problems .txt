@@ -1,0 +1,9 @@
+1. wk2-Tutorial-TextMining
+
+qdap install?
+
+%>%
+
+nomin and nomin.list diff rows
+
+
