@@ -38,6 +38,10 @@ In this project, I will analyze inauguration speeches of different presidents fr
 * How does emotion change in the speeches and compared between two parties?
 
 
+**Notice:**
+
+**To reproduce my result, please download the whole folder zipper and then run the code.**
+
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
 ```
@@ -54,8 +58,6 @@ proj/
 - The `lib` folder contain computation codes for your data analysis. Make sure your README.md is informative about what are the programs found in this folder. 
 - The `output` folder is the holding place for intermediate and final computational results.
 
-**Notice:**
 
-**To reproduce my result, please download the folder zipper and then run the code.**
 
 Please see each subfolder for a README file.
