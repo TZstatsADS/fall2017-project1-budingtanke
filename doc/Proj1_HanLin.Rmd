@@ -3,13 +3,13 @@ title: "Democratic VS Republican -- What can we know from president inauguration
 author: "Han Lin (hl3006)"
 date: "9/17/2017"
 output:
-  html_document: default
+  pdf_document: default
   html_notebook: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-#knitr::opts_knit$set(root.dir = "~/GitHub/fall2017-project1-budingtanke")
 ```
 
 <div style="width:400px; height=300px">
@@ -118,12 +118,13 @@ speech.list$President <- as.character(speech.list$President)
 
 # Step 2: Data Processing --- generate list of sentences and list of words
 
-We will generate a list of sentences and a list of words for futher analysis.
+We will generate a list of sentences and a list of words for futher analysis, since sentence and word are unit for our analysis.
 
 ## Generate list of sentences
 
 We first generate a list of senteences, each row is a sentence of the speech for each president.
 ```{r, message=FALSE, warning=FALSE}
+# We assign an sequential id to each sentence in a speech (`sent.id`) and also calculated the number of words in each sentence as sentence length (`word.count`).
 sentence.list=NULL
 for(i in 1:nrow(speech.list)){
   sentences=sent_detect(speech.list$fulltext[i],
@@ -144,11 +145,8 @@ for(i in 1:nrow(speech.list)){
     )
   }
 }
-```
 
-
-Some non-sentences exist in raw data due to erroneous extra end-of sentence marks. 
-```{r}
+# Some non-sentences exist in raw data due to erroneous extra end-of sentence marks. 
 sentence.list=
   sentence.list%>%
   filter(!is.na(word.count)) 
@@ -158,7 +156,7 @@ sentence.list=
 
 ## Generate list of words
 
-We then generate a list of words from sentence list above, each row is a word of a sentence for each president.
+Now we have list of sentences with each row a sentence in the 'sentences' column. Now we want to convert it to one-token-per-document-per-row. So we need to break sentences into individual tokens, which could be done by *unnest_tokens* from tidytext. Below we then generate a list of words from sentence list above, each row is a word of a sentence for each president. 
 ```{r}
 sentence.list$sentences <- as.character(sentence.list$sentences)
 words.list <- sentence.list %>%
@@ -206,7 +204,6 @@ From the violin plot, we could see speech length of democratic is more concentra
 We also wonder if length of sentence differ between two parties. So we here draw a violin plot for each president, showing in the same plot. Again, we use different colors to differ two parties.
 
 ```{r}
-
 ggplot(sentence.list,aes(reorder(President,1:nrow(sentence.list)),word.count,fill=Party))+
   geom_violin()+
   xlab('President')+
@@ -358,6 +355,11 @@ word_trend('america')
 
 ```
 
+We see from the plot that for most words, there is no much difference between two parties, but we could also find some interesting patterns like: Republican mentioned 'freedom' more than Democratic; Donald Trump mentioned 'America' more than any other president.
+
+
+
+
 ### tf-idf
 
 The idea of tf-idf is to find the important words for the content of each document by decreasing the weight for commonly used words and increasing the weight for words that are not used very much in a collection or corpus of documents.
@@ -387,7 +389,7 @@ print(head(arrange(tf_idf_repub,desc(count)),10))
 # Step 5: Sentiment Analysis
 
 ## Emotion
-There are a variety of methods and dictionaries that exist for evaluating the opinion or emotion in text. The tidytext package contains several sentiment lexicons in the sentiments dataset. There are *nrc*, *bing*, and *AFINN* lexicon, here we use *nrc*, which categorizes words in a binary fashion (“yes”/“no”) into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. More information could be found [here](http://tidytextmining.com/sentiment.html).
+There are a variety of methods and dictionaries that exist for evaluating the opinion or emotion in text. The tidytext package contains several sentiment lexicons in the sentiments dataset. There are *nrc*, *bing*, and *AFINN* lexicon, here we use [NRC sentiment lexion](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)., which categorizes words in a binary fashion (“yes”/“no”) into categories of positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. More information could be found [here](http://tidytextmining.com/sentiment.html).
 
 ```{r}
 # calculate means for each emotion
@@ -424,8 +426,7 @@ We could see similarities of the two parties. Top emotions are both 'trust', 'an
 
 ## Positive & Negative
 
-We could also see the positive and negative emotion change throughout speechs of each president.
-
+We could also see the positive and negative sentiment change throughout speechs of each president.
 ```{r,message=FALSE}
 # here we select four presidents to discuss
 select_president <- c('John F. Kennedy', 'Barack Obama','George Bush', 'Donald J. Trump')
@@ -442,3 +443,4 @@ ggplot(sentiment, aes(index, sentiment, fill = File)) +
 
 ```
 
+Barack Obama and John F. Kennedy represent Democratic, while Donald J. Trump and George Bush represent Republican. We could see that Democratic seem to have a negative part after the beginning of the speech, while Republican seem to have positive and negative part throughout the speech.
