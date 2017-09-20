@@ -3,8 +3,9 @@
 
 ![image](figs/title.jpg) ![](http://atlantablackstar.com/wp-content/uploads/2013/03/republican-democrat-battle.jpeg)
 
-Final report could be found [here](file:///Users/linhan/GitHub/fall2017-project1-budingtanke/doc/Proj_HanLin.html)
-Final rmd file is in the data folder named *Proj_HanLin.Rmd*.
+**Final report could be found [here](file:///Users/linhan/GitHub/fall2017-project1-budingtanke/doc/Proj_HanLin.html)
+
+**Final rmd file is in the data folder named *Proj_HanLin.Rmd*.
 
 ### [Project Description](doc/)
 This is the first and only *individual* (as opposed to *team*) this semester. 
@@ -53,5 +54,8 @@ proj/
 - The `lib` folder contain computation codes for your data analysis. Make sure your README.md is informative about what are the programs found in this folder. 
 - The `output` folder is the holding place for intermediate and final computational results.
 
+**Notice:
+
+To reproduce my result, please download the folder ziper and then run the code.
 
 Please see each subfolder for a README file.
