@@ -3,6 +3,9 @@
 
 ![image](figs/title.jpg) ![](http://atlantablackstar.com/wp-content/uploads/2013/03/republican-democrat-battle.jpeg)
 
+Final report could be found [here](file:///Users/linhan/GitHub/fall2017-project1-budingtanke/doc/Proj_HanLin.html)
+Final rmd file is in the data folder named *Proj_HanLin.Rmd*.
+
 ### [Project Description](doc/)
 This is the first and only *individual* (as opposed to *team*) this semester. 
 
@@ -11,8 +14,7 @@ Term: Fall 2017
 + Projec title: Democratic VS Republican -- What can we know from president inauguration speeches?
 + This project is conducted by Han Lin (hl3006)
 
-Final report could be found [here](file:///Users/linhan/GitHub/fall2017-project1-budingtanke/doc/Proj_HanLin.html)
-Final rmd file is in the data folder named *Proj_HanLin.Rmd*.
+
 
 + Project summary: 
 
