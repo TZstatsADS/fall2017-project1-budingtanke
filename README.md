@@ -12,8 +12,8 @@ This is the first and only *individual* (as opposed to *team*) this semester.
 
 Term: Fall 2017
 
-+ Projec title: Democratic VS Republican -- What can we know from president inauguration speeches?
-+ This project is conducted by Han Lin (hl3006)
++ Projec title: **Democratic VS Republican -- What can we know from president inauguration speeches?**
++ This project is conducted by **Han Lin (hl3006)**
 
 
 
