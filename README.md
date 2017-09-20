@@ -3,9 +3,9 @@
 
 ![image](figs/title.jpg) ![](http://atlantablackstar.com/wp-content/uploads/2013/03/republican-democrat-battle.jpeg)
 
-### Final report is in the doc folder named "Proj_HanLin.html", you need to download it to see the final results and visualization.
+**Final report is in the doc folder named "Proj_HanLin.html", you need to download it to see the final results and visualization.**
 
-### Final rmd file is in the doc folder named "Proj_HanLin.Rmd", which contains all the code.
+**Final rmd file is in the doc folder named "Proj_HanLin.Rmd", which contains all the code.**
 
 ### [Project Description](doc/)
 This is the first and only *individual* (as opposed to *team*) this semester. 
